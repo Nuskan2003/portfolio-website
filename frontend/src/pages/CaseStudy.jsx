@@ -5,7 +5,7 @@ function CaseStudy() {
   const { slug } = useParams();
 
   const project = projects.find(
-    (p) => p.slug === slug
+    (project) => project.slug === slug
   );
 
   if (!project) {
@@ -13,34 +13,76 @@ function CaseStudy() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-24 px-6">
+    <div className="max-w-6xl mx-auto py-24 px-6">
 
-      <h1 className="text-5xl font-bold">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="
+          w-full
+          h-[400px]
+          object-cover
+          rounded-3xl
+        "
+      />
+
+      <h1 className="text-5xl font-bold mt-12">
         {project.title}
       </h1>
 
-      <p className="mt-6 text-lg">
+      <p className="text-xl mt-4">
         {project.description}
       </p>
 
-      <div className="mt-12">
+      <div className="mt-16">
+
         <h2 className="text-3xl font-bold">
           Problem Statement
         </h2>
 
         <p className="mt-4">
-          This section will contain the business problem.
+          {project.problem}
         </p>
+
       </div>
 
-      <div className="mt-12">
+      <div className="mt-16">
+
         <h2 className="text-3xl font-bold">
-          Proposed Solution
+          Solution
         </h2>
 
         <p className="mt-4">
-          This section will contain the proposed solution.
+          {project.solution}
         </p>
+
+      </div>
+
+      <div className="mt-16">
+
+        <h2 className="text-3xl font-bold">
+          Technologies Used
+        </h2>
+
+        <div className="flex flex-wrap gap-3 mt-6">
+
+          {project.tech.map((tech) => (
+            <span
+              key={tech}
+              className="
+                px-4
+                py-2
+                bg-blue-100
+                text-blue-600
+                rounded-full
+              "
+            >
+              {tech}
+            </span>
+          ))}
+
+        </div>
+
       </div>
 
     </div>
