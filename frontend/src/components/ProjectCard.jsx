@@ -6,48 +6,46 @@ function ProjectCard({ project }) {
     <motion.div
       whileHover={{
         y: -10,
-        scale: 1.03,
-      }}
-      transition={{
-        duration: 0.3,
       }}
       className="
-        backdrop-blur-lg
-        bg-white/60
-        border
         rounded-3xl
-        shadow-xl
         overflow-hidden
+        shadow-xl
+        bg-white
+        dark:bg-slate-900
       "
     >
+      <img
+        src={project.image}
+        alt={project.title}
+        className="h-56 w-full object-cover"
+      />
 
-      <div className="h-48 bg-gradient-to-r from-blue-500 to-green-500" />
-
-      <div className="p-8">
+      <div className="p-6">
 
         <h3 className="text-2xl font-bold">
           {project.title}
         </h3>
 
-        <p className="mt-4 text-slate-500">
+        <p className="mt-3 text-slate-500">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mt-6">
+        <div className="flex flex-wrap gap-2 mt-4">
 
-          {project.tech.map((tech) => (
+          {project.tech.map((item) => (
             <span
-              key={tech}
+              key={item}
               className="
                 px-3
                 py-1
+                rounded-full
                 bg-blue-100
                 text-blue-600
-                rounded-full
                 text-sm
               "
             >
-              {tech}
+              {item}
             </span>
           ))}
 
@@ -57,16 +55,15 @@ function ProjectCard({ project }) {
           to={`/case-study/${project.slug}`}
           className="
             inline-block
-            mt-8
-            font-semibold
+            mt-6
             text-blue-600
+            font-semibold
           "
         >
           View Case Study →
         </Link>
 
       </div>
-
     </motion.div>
   );
 }
