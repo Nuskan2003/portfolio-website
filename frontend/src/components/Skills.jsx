@@ -21,8 +21,8 @@ function Skills() {
     >
       <div className="max-w-6xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-center mb-12">
-          Skills
+        <h2 className="text-5xl font-bold text-center mb-16">
+          Skills & Technologies
         </h2>
 
         <div className="grid md:grid-cols-4 gap-6">
@@ -30,7 +30,19 @@ function Skills() {
           {skills.map((skill) => (
             <div
               key={skill}
-              className="p-6 rounded-2xl shadow-lg text-center hover:-translate-y-2 transition"
+              className="
+                backdrop-blur-lg
+                bg-white/60
+                border
+                rounded-3xl
+                p-8
+                text-center
+                shadow-lg
+                hover:scale-105
+                hover:-translate-y-2
+                transition
+                duration-300
+              "
             >
               {skill}
             </div>
