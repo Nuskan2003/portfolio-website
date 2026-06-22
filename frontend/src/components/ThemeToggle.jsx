@@ -8,7 +8,14 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="text-xl"
+      className="
+        p-3
+        rounded-full
+        bg-blue-600
+        text-white
+        hover:scale-110
+        transition
+      "
     >
       {darkMode ? <FaSun /> : <FaMoon />}
     </button>
