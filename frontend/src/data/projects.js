@@ -1,27 +1,72 @@
+import sports from "../assets/images/projects/sports-booking.png";
+import travel from "../assets/images/projects/travel-system.png";
+import library from "../assets/images/projects/library-system.png";
+
 const projects = [
   {
     id: 1,
     title: "Indoor Sports Booking System",
     slug: "indoor-sports-booking",
-    tech: ["React", "Node.js", "MySQL"],
+    image: sports,
+
+    tech: [
+      "React",
+      "Node.js",
+      "MySQL",
+    ],
+
     description:
-      "A sports venue booking platform with modern UI and booking management.",
+      "Modern booking platform for indoor sports facilities.",
+
+    problem:
+      "Users needed a simpler way to book sports venues online.",
+
+    solution:
+      "Developed a responsive booking platform with real-time availability tracking.",
   },
+
   {
     id: 2,
     title: "Travel Information System",
     slug: "travel-information-system",
-    tech: ["PHP", "MySQL", "JavaScript"],
+    image: travel,
+
+    tech: [
+      "PHP",
+      "JavaScript",
+      "MySQL",
+    ],
+
     description:
-      "A travel planning application providing destination details and trip management.",
+      "Travel planning and destination information platform.",
+
+    problem:
+      "Travelers lacked centralized destination information.",
+
+    solution:
+      "Created a user-friendly travel planning system.",
   },
+
   {
     id: 3,
     title: "Library Management System",
     slug: "library-management-system",
-    tech: ["C#", ".NET", "MySQL"],
+    image: library,
+
+    tech: [
+      "C#",
+      ".NET",
+      "MySQL",
+    ],
+
     description:
-      "A desktop system for managing books, members, and borrowing records.",
+      "Desktop application for managing library operations.",
+
+    problem:
+      "Manual book tracking was inefficient.",
+
+    solution:
+      "Built a centralized library management system.",
   },
 ];
 
