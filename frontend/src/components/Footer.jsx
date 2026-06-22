@@ -2,30 +2,40 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="py-8 border-t">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <footer className="py-10 border-t mt-24">
 
-        <h2 className="text-xl font-bold">
-          Nuskan Nazar
-        </h2>
+      <div className="max-w-7xl mx-auto px-6">
 
-        <p className="mt-4 md:mt-0">
-          © 2026 All Rights Reserved
-        </p>
+        <div className="flex flex-col items-center">
 
-        <div className="flex gap-4 mt-4 md:mt-0">
+          <h2 className="text-3xl font-bold">
+            Nuskan Nazar
+          </h2>
 
-          <a href="#">
-            <FaGithub size={22} />
-          </a>
+          <p className="mt-3 text-slate-500">
+            Full Stack Developer
+          </p>
 
-          <a href="#">
-            <FaLinkedin size={22} />
-          </a>
+          <div className="flex gap-6 mt-6">
+
+            <a href="#">
+              <FaGithub size={24} />
+            </a>
+
+            <a href="#">
+              <FaLinkedin size={24} />
+            </a>
+
+          </div>
+
+          <p className="mt-8 text-sm text-slate-500">
+            © 2026 Nuskan Nazar. All rights reserved.
+          </p>
 
         </div>
 
       </div>
+
     </footer>
   );
 }
