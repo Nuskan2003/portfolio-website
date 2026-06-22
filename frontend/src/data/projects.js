@@ -1,4 +1,4 @@
-import sports from "../assets/images/projects/sports-booking.png";
+import sports from "../assets/images/projects/bookshop.png";
 import travel from "../assets/images/projects/travel-system.png";
 import library from "../assets/images/projects/library-system.png";
 
