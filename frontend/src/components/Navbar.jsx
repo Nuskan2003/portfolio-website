@@ -6,9 +6,13 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   return (
     <nav
@@ -27,54 +31,60 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <h1
-          className="
-            text-2xl
-            font-bold
-            bg-gradient-to-r
-            from-blue-500
-            via-purple-500
-            to-cyan-400
-            text-transparent
-            bg-clip-text
-          "
-        >
-          Nuskan Nazar
-        </h1>
+        {/* Logo */}
+
+        <Link to="/">
+          <h1
+            className="
+              text-2xl
+              font-bold
+              bg-gradient-to-r
+              from-blue-500
+              via-purple-500
+              to-cyan-400
+              text-transparent
+              bg-clip-text
+            "
+          >
+            Nuskan Nazar
+          </h1>
+        </Link>
 
         {/* Desktop Menu */}
 
         <ul className="hidden md:flex gap-8 font-medium">
 
           <li>
-            <a href="#home">
-              Home
-            </a>
+            <Link to="/">Home</Link>
           </li>
 
-          <li>
-            <a href="#about">
-              About
-            </a>
-          </li>
+          {isHomePage && (
+            <>
+              <li>
+                <a href="#about">
+                  About
+                </a>
+              </li>
 
-          <li>
-            <a href="#skills">
-              Skills
-            </a>
-          </li>
+              <li>
+                <a href="#skills">
+                  Skills
+                </a>
+              </li>
 
-          <li>
-            <a href="#projects">
-              Projects
-            </a>
-          </li>
+              <li>
+                <a href="#projects">
+                  Projects
+                </a>
+              </li>
 
-          <li>
-            <a href="#contact">
-              Contact
-            </a>
-          </li>
+              <li>
+                <a href="#contact">
+                  Contact
+                </a>
+              </li>
+            </>
+          )}
 
         </ul>
 
@@ -120,9 +130,7 @@ function Navbar() {
 
         <button
           className="md:hidden"
-          onClick={() =>
-            setMenuOpen(!menuOpen)
-          }
+          onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (
             <FaTimes size={24} />
@@ -149,34 +157,41 @@ function Navbar() {
           <ul className="space-y-4 font-medium">
 
             <li>
-              <a href="#home">
+              <Link
+                to="/"
+                onClick={() => setMenuOpen(false)}
+              >
                 Home
-              </a>
+              </Link>
             </li>
 
-            <li>
-              <a href="#about">
-                About
-              </a>
-            </li>
+            {isHomePage && (
+              <>
+                <li>
+                  <a href="#about">
+                    About
+                  </a>
+                </li>
 
-            <li>
-              <a href="#skills">
-                Skills
-              </a>
-            </li>
+                <li>
+                  <a href="#skills">
+                    Skills
+                  </a>
+                </li>
 
-            <li>
-              <a href="#projects">
-                Projects
-              </a>
-            </li>
+                <li>
+                  <a href="#projects">
+                    Projects
+                  </a>
+                </li>
 
-            <li>
-              <a href="#contact">
-                Contact
-              </a>
-            </li>
+                <li>
+                  <a href="#contact">
+                    Contact
+                  </a>
+                </li>
+              </>
+            )}
 
           </ul>
 
