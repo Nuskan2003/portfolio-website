@@ -23,11 +23,11 @@ function ProjectCard({ project }) {
 
       <div className="p-6">
 
-        <h3 className="text-2xl font-bold">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
           {project.title}
         </h3>
 
-        <p className="mt-3 text-slate-500">
+        <p className="mt-3 text-slate-600 dark:text-slate-300">
           {project.description}
         </p>
 

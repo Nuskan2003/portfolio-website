@@ -96,11 +96,19 @@ function Navbar() {
             Resume
           </button>
 
-          <a href="#">
+          <a
+            href="https://github.com/Nuskan2003"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub size={22} />
           </a>
 
-          <a href="#">
+          <a
+            href="https://www.linkedin.com/in/muhammadunuskan/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin size={22} />
           </a>
 
@@ -174,9 +182,21 @@ function Navbar() {
 
           <div className="flex gap-4 mt-6">
 
-            <FaGithub size={22} />
+            <a
+              href="https://github.com/Nuskan2003"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub size={22} />
+            </a>
 
-            <FaLinkedin size={22} />
+            <a
+              href="https://www.linkedin.com/in/muhammadunuskan/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin size={22} />
+            </a>
 
             <ThemeToggle />
 

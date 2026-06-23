@@ -18,11 +18,19 @@ function Footer() {
 
           <div className="flex gap-6 mt-6">
 
-            <a href="#">
+            <a
+              href="https://github.com/Nuskan2003"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub size={24} />
             </a>
 
-            <a href="#">
+            <a
+              href="https://www.linkedin.com/in/muhammadunuskan/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin size={24} />
             </a>
 
