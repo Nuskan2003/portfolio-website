@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SectionWrapper from "./SectionWrapper";
 
 const experiences = [
   {
@@ -25,39 +26,44 @@ const experiences = [
 
 function Experience() {
   return (
-    <section id="experience" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-16">
-          Experience & Projects
-        </h2>
+    <SectionWrapper>
+      <section id="experience" className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
 
-        <div className="relative border-l-4 border-blue-600 ml-6">
+          <h2 className="text-5xl font-bold text-center mb-16">
+            Experience & Projects
+          </h2>
 
-          {experiences.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="mb-12 ml-8"
-            >
-              <div className="absolute w-5 h-5 bg-blue-600 rounded-full -left-[11px]" />
+          <div className="relative border-l-4 border-blue-600 ml-6">
 
-              <span className="text-blue-600 font-bold">
-                {item.year}
-              </span>
+            {experiences.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="mb-12 ml-8"
+              >
+                <div className="absolute w-5 h-5 bg-blue-600 rounded-full -left-[11px]" />
 
-              <h3 className="text-2xl font-semibold mt-2">
-                {item.title}
-              </h3>
+                <span className="text-blue-600 font-bold">
+                  {item.year}
+                </span>
 
-              <p className="text-slate-500 mt-2">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+                <h3 className="text-2xl font-semibold mt-2">
+                  {item.title}
+                </h3>
+
+                <p className="text-slate-500 mt-2">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
+    </SectionWrapper>
   );
 }
 

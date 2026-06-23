@@ -11,45 +11,110 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b">
-
+    <nav
+      className="
+        fixed
+        top-0
+        left-0
+        w-full
+        z-50
+        backdrop-blur-xl
+        bg-white/10
+        border-b
+        border-white/20
+        shadow-lg
+      "
+    >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <h1 className="text-2xl font-bold">
+        <h1
+          className="
+            text-2xl
+            font-bold
+            bg-gradient-to-r
+            from-blue-500
+            via-purple-500
+            to-cyan-400
+            text-transparent
+            bg-clip-text
+          "
+        >
           Nuskan Nazar
         </h1>
 
-        <ul className="hidden md:flex gap-8">
+        {/* Desktop Menu */}
 
-          <li><a href="#home">Home</a></li>
+        <ul className="hidden md:flex gap-8 font-medium">
 
-          <li><a href="#about">About</a></li>
+          <li>
+            <a href="#home">
+              Home
+            </a>
+          </li>
 
-          <li><a href="#skills">Skills</a></li>
+          <li>
+            <a href="#about">
+              About
+            </a>
+          </li>
 
-          <li><a href="#projects">Projects</a></li>
+          <li>
+            <a href="#skills">
+              Skills
+            </a>
+          </li>
 
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#projects">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Contact
+            </a>
+          </li>
 
         </ul>
 
+        {/* Desktop Actions */}
+
         <div className="hidden md:flex items-center gap-4">
 
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
+          <button
+            className="
+              px-4
+              py-2
+              rounded-lg
+              bg-blue-600
+              text-white
+              hover:bg-blue-700
+              transition
+            "
+          >
             Resume
           </button>
 
-          <FaGithub size={22} />
+          <a href="#">
+            <FaGithub size={22} />
+          </a>
 
-          <FaLinkedin size={22} />
+          <a href="#">
+            <FaLinkedin size={22} />
+          </a>
 
           <ThemeToggle />
 
         </div>
 
+        {/* Mobile Menu Button */}
+
         <button
           className="md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
         >
           {menuOpen ? (
             <FaTimes size={24} />
@@ -60,26 +125,65 @@ function Navbar() {
 
       </div>
 
+      {/* Mobile Menu */}
+
       {menuOpen && (
-        <div className="md:hidden bg-white p-6">
+        <div
+          className="
+            md:hidden
+            backdrop-blur-xl
+            bg-white/20
+            border-t
+            border-white/20
+            p-6
+          "
+        >
+          <ul className="space-y-4 font-medium">
 
-          <ul className="space-y-4">
+            <li>
+              <a href="#home">
+                Home
+              </a>
+            </li>
 
-            <li><a href="#home">Home</a></li>
+            <li>
+              <a href="#about">
+                About
+              </a>
+            </li>
 
-            <li><a href="#about">About</a></li>
+            <li>
+              <a href="#skills">
+                Skills
+              </a>
+            </li>
 
-            <li><a href="#skills">Skills</a></li>
+            <li>
+              <a href="#projects">
+                Projects
+              </a>
+            </li>
 
-            <li><a href="#projects">Projects</a></li>
-
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#contact">
+                Contact
+              </a>
+            </li>
 
           </ul>
 
+          <div className="flex gap-4 mt-6">
+
+            <FaGithub size={22} />
+
+            <FaLinkedin size={22} />
+
+            <ThemeToggle />
+
+          </div>
+
         </div>
       )}
-
     </nav>
   );
 }

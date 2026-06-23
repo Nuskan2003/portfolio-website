@@ -1,76 +1,53 @@
-import { motion } from "framer-motion";
+import { useEffect, useState, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 function AnimatedBackground() {
+  const { darkMode } =
+    useContext(ThemeContext);
+
+  const [position, setPosition] = useState({
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  });
+
+  useEffect(() => {
+    const move = (e) => {
+      setPosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener("mousemove", move);
+
+    return () =>
+      window.removeEventListener(
+        "mousemove",
+        move
+      );
+  }, []);
+
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: 1 }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          left: position.x - 300,
+          top: position.y - 300,
+          width: "600px",
+          height: "600px",
+          borderRadius: "50%",
+          background: darkMode
+            ? "radial-gradient(circle, rgba(59,130,246,0.25), rgba(168,85,247,0.20), rgba(34,211,238,0.15), transparent 75%)"
+            : "radial-gradient(circle, rgba(59,130,246,0.18), rgba(168,85,247,0.12), transparent 70%)",
 
-      <motion.div
-        animate={{
-          x: [0, 150, 0],
-          y: [0, 100, 0],
+          transition:
+            "left 0.15s ease-out, top 0.15s ease-out",
         }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          absolute
-          top-20
-          left-20
-          w-96
-          h-96
-          rounded-full
-          bg-blue-500/20
-          blur-3xl
-        "
       />
-
-      <motion.div
-        animate={{
-          x: [0, -120, 0],
-          y: [0, 150, 0],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          absolute
-          bottom-20
-          right-20
-          w-[500px]
-          h-[500px]
-          rounded-full
-          bg-green-500/20
-          blur-3xl
-        "
-      />
-
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="
-          absolute
-          top-1/2
-          left-1/2
-          -translate-x-1/2
-          -translate-y-1/2
-          w-[400px]
-          h-[400px]
-          rounded-full
-          bg-purple-500/10
-          blur-3xl
-        "
-      />
-
     </div>
   );
 }

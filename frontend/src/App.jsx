@@ -1,10 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
-import AppRoutes from "./routes/AppRoutes";
 import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } =
+    useContext(ThemeContext);
 
   return (
     <div

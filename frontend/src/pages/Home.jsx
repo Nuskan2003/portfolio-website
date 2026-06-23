@@ -15,25 +15,27 @@ function Home() {
     <>
       <AnimatedBackground />
 
-      <Navbar />
+      <div className="relative z-10">
+        <Navbar />
 
-      <Hero />
+        <Hero />
 
-      <About />
+        <About />
 
-      <Stats />
+        <Stats />
 
-      <Skills />
+        <Skills />
 
-      <Experience />
+        <Experience />
 
-      <Projects />
+        <Projects />
 
-      <Contact />
+        <Contact />
 
-      <Footer />
+        <Footer />
 
-      <ScrollToTopButton />
+        <ScrollToTopButton />
+      </div>
     </>
   );
 }

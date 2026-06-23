@@ -2,6 +2,19 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import profile from "../assets/images/profile.jpg";
 
+const badges = [
+  { name: "React", top: "-10%", left: "40%", duration: 3.2 },
+  { name: "HTML", top: "10%", left: "-20%", duration: 3.8 },
+  { name: "JavaScript", top: "10%", right: "-25%", duration: 4.1 },
+  { name: "CSS", top: "40%", left: "-30%", duration: 3.5 },
+  { name: "Node.js", top: "40%", right: "-30%", duration: 4.3 },
+  { name: "MySQL", bottom: "15%", left: "-25%", duration: 3.7 },
+  { name: "Express", bottom: "15%", right: "-25%", duration: 4.0 },
+  { name: "Java", bottom: "-10%", left: "15%", duration: 3.4 },
+  { name: "GitHub", bottom: "-10%", right: "15%", duration: 4.2 },
+  { name: "Python", bottom: "-20%", left: "40%", duration: 3.9 },
+];
+
 function Hero() {
   return (
     <section
@@ -12,7 +25,7 @@ function Hero() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
-          {/* Left */}
+          {/* Left Content */}
 
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -20,15 +33,44 @@ function Hero() {
             transition={{ duration: 0.8 }}
           >
 
-            <span className="px-4 py-2 rounded-full bg-blue-100 text-blue-600 text-sm">
+            <span
+              className="
+                px-4
+                py-2
+                rounded-full
+                bg-blue-100
+                text-blue-600
+                text-sm
+              "
+            >
               Welcome To My Portfolio
             </span>
 
-            <h1 className="text-5xl md:text-7xl font-bold mt-6 leading-tight">
+            <h1
+              className="
+                text-5xl
+                md:text-7xl
+                font-bold
+                mt-6
+                leading-tight
+              "
+            >
               Hi, I'm
-              <span className="block text-blue-600">
+
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-blue-500
+                  via-purple-500
+                  to-cyan-400
+                  text-transparent
+                  bg-clip-text
+                "
+              >
                 Nuskan Nazar
               </span>
+
             </h1>
 
             <div className="text-2xl mt-6 font-medium">
@@ -50,49 +92,91 @@ function Hero() {
 
             </div>
 
-            <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              I build modern web applications with
-              exceptional user experiences using React,
-              Node.js, Express, and MySQL.
+            <p className="mt-6 text-lg text-slate-500">
+              I build modern, scalable web applications
+              with exceptional user experiences using
+              React, Node.js, Express, and MySQL.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-
-              <a
-                href="#projects"
-                className="px-8 py-4 bg-blue-600 text-white rounded-xl hover:scale-105 transition"
-              >
-                View Projects
-              </a>
-
-              <a
-                href="#contact"
-                className="px-8 py-4 border rounded-xl hover:scale-105 transition"
-              >
-                Contact Me
-              </a>
-
-            </div>
 
           </motion.div>
 
-          {/* Right */}
+          {/* Right Content */}
 
           <motion.div
+            className="relative flex justify-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex justify-center"
           >
 
             <div className="relative">
 
-              <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-20 rounded-full"></div>
+              {/* Floating Badges */}
+
+              {badges.map((badge) => (
+                <motion.div
+                  key={badge.name}
+                  animate={{
+                    y: [0, -12, 0],
+                  }}
+                  transition={{
+                    duration: badge.duration,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="
+                    absolute
+                    px-5
+                    py-2
+                    rounded-full
+                    backdrop-blur-xl
+                    bg-white/80
+                    dark:bg-slate-800/80
+                    border
+                    border-white/20
+                    shadow-xl
+                    text-sm
+                    font-medium
+                    whitespace-nowrap
+                  "
+                  style={badge}
+                >
+                  {badge.name}
+                </motion.div>
+              ))}
+
+              {/* Gradient Glow Ring */}
+
+              <div
+                className="
+                  absolute
+                  inset-0
+                  rounded-full
+                  bg-gradient-to-r
+                  from-blue-500
+                  via-purple-500
+                  to-cyan-500
+                  blur-2xl
+                  opacity-30
+                  scale-110
+                "
+              />
+
+              {/* Profile Image */}
 
               <img
                 src={profile}
                 alt="Profile"
-                className="relative w-80 h-80 object-cover rounded-full border-4 border-white shadow-2xl"
+                className="
+                  relative
+                  w-80
+                  h-80
+                  rounded-full
+                  object-cover
+                  border-4
+                  border-white
+                  shadow-2xl
+                "
               />
 
             </div>
