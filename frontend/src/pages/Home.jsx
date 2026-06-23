@@ -8,10 +8,13 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import AnimatedBackground from "../components/AnimatedBackground";
 
 function Home() {
   return (
     <>
+      <AnimatedBackground />
+
       <Navbar />
 
       <Hero />
