@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import projects from "../data/projects";
 
 function CaseStudy() {
   const { slug } = useParams();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const project = projects.find(
     (item) => item.slug === slug
@@ -224,36 +226,54 @@ function CaseStudy() {
 
         {/* Screenshot Gallery */}
 
+        {/* Project Gallery */}
+
         <section className="mt-16">
+
           <h2 className="text-3xl font-bold mb-6">
             Project Gallery
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
 
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="
-                  h-56
-                  rounded-2xl
-                  bg-white/80
-                  dark:bg-slate-900/70
-                  backdrop-blur-xl
-                  border
-                  border-slate-200
-                  dark:border-slate-700
-                  shadow-xl
-                  flex
-                  items-center
-                  justify-center
-                "
-              >
-                Screenshot {item}
-              </div>
-            ))}
+            {project.gallery?.map(
+              (image, index) => (
+                <div
+                  key={index}
+                  className="
+                    overflow-hidden
+                    rounded-3xl
+                    bg-white/80
+                    dark:bg-slate-900/70
+                    backdrop-blur-xl
+                    border
+                    border-slate-200
+                    dark:border-slate-700
+                    shadow-xl
+                    hover:shadow-2xl
+                    transition
+                  "
+                >
+                  <img
+                  src={image}
+                  alt={`${project.title} Screenshot ${index + 1}`}
+                  onClick={() => setSelectedImage(index)}
+                  className="
+                    w-full
+                    h-[300px]
+                    object-cover
+                    hover:scale-105
+                    transition
+                    duration-500
+                    cursor-pointer
+                  "
+                />
+                </div>
+              )
+            )}
 
           </div>
+
         </section>
 
         {/* Challenges */}
@@ -420,6 +440,91 @@ function CaseStudy() {
         </div>
 
       </div>
+
+      {selectedImage !== null && (
+      <div
+        className="
+          fixed
+          inset-0
+          z-[999]
+          bg-black/90
+          flex
+          items-center
+          justify-center
+          p-6
+        "
+      >
+        {/* Close Button */}
+
+        <button
+          onClick={() => setSelectedImage(null)}
+          className="
+            absolute
+            top-6
+            right-8
+            text-white
+            text-5xl
+            font-light
+          "
+        >
+          ×
+        </button>
+
+        {/* Previous */}
+
+        <button
+          onClick={() =>
+            setSelectedImage(
+              selectedImage === 0
+                ? project.gallery.length - 1
+                : selectedImage - 1
+            )
+          }
+          className="
+            absolute
+            left-6
+            text-white
+            text-6xl
+          "
+        >
+          ‹
+        </button>
+
+        {/* Image */}
+
+        <img
+          src={project.gallery[selectedImage]}
+          alt="Preview"
+          className="
+            max-w-[90vw]
+            max-h-[85vh]
+            rounded-3xl
+            shadow-2xl
+          "
+        />
+
+        {/* Next */}
+
+        <button
+          onClick={() =>
+            setSelectedImage(
+              selectedImage ===
+                project.gallery.length - 1
+                ? 0
+                : selectedImage + 1
+            )
+          }
+          className="
+            absolute
+            right-6
+            text-white
+            text-6xl
+          "
+        >
+          ›
+        </button>
+      </div>
+    )}
     </>
   );
 }

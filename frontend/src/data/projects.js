@@ -3,6 +3,27 @@ import portfolio from "../assets/images/projects/portfolio.png";
 import travel from "../assets/images/projects/travel-system.png";
 import library from "../assets/images/projects/library-system.png";
 import bookshop from "../assets/images/projects/bookshop.png";
+// Sports Booking Gallery
+import sportsHome from "../assets/images/case-studies/sports-booking/sports-home.png";
+import sportsBookingPage from "../assets/images/case-studies/sports-booking/sports-booking-page.png";
+import sportsTableReservation from "../assets/images/case-studies/sports-booking/sports-table-reservation.png";
+// Portfolio Gallery
+import portfolioHome from "../assets/images/case-studies/portfolio/portfolio-home.png";
+import portfolioProjects from "../assets/images/case-studies/portfolio/portfolio-projects.png";
+import portfolioResume from "../assets/images/case-studies/portfolio/portfolio-resume.png";
+import portfolioSkills from "../assets/images/case-studies/portfolio/portfolio-skills.png";
+// Travel Gallery
+import travelHome from "../assets/images/case-studies/travel-system/travel-home.png";
+import travelDestinations from "../assets/images/case-studies/travel-system/travel-destinations.png";
+import travelPlanner from "../assets/images/case-studies/travel-system/travel-planner.png";
+// Library Gallery
+import libraryHome from "../assets/images/case-studies/library-system/library-home.png";
+import libraryBooks from "../assets/images/case-studies/library-system/library-books.png";
+import libraryProfile from "../assets/images/case-studies/library-system/library-profile.png";
+// Bookshop Gallery
+import bookshopHome from "../assets/images/case-studies/bookshop/bookshop-home.png";
+import bookshopCatalog from "../assets/images/case-studies/bookshop/bookshop-catalog.png";
+import bookshopLanding from "../assets/images/case-studies/bookshop/bookshop-landing.png";
 
 const projects = [
   {
@@ -10,6 +31,12 @@ const projects = [
     title: "Indoor Sports Booking System",
     slug: "indoor-sports-booking",
     image: sports,
+
+    gallery: [
+      sportsHome,
+      sportsBookingPage,
+      sportsTableReservation,
+    ],
 
     tech: [
       "React",
@@ -69,6 +96,13 @@ const projects = [
     title: "Portfolio Website",
     slug: "portfolio-website",
     image: portfolio,
+
+    gallery: [
+      portfolioHome,
+      portfolioProjects,
+      portfolioResume,
+      portfolioSkills,
+    ],
 
     tech: [
       "React",
@@ -131,6 +165,12 @@ const projects = [
     slug: "travel-information-system",
     image: travel,
 
+    gallery: [
+      travelHome,
+      travelDestinations,
+      travelPlanner,
+    ],
+
     tech: [
       "PHP",
       "JavaScript",
@@ -188,6 +228,12 @@ const projects = [
     slug: "library-management-system",
     image: library,
 
+    gallery: [
+      libraryHome,
+      libraryBooks,
+      libraryProfile,
+    ],
+
     tech: [
       "C#",
       ".NET",
@@ -244,6 +290,12 @@ const projects = [
     title: "Bookshop Website",
     slug: "bookshop-website",
     image: bookshop,
+
+    gallery: [
+      bookshopHome,
+      bookshopCatalog,
+      bookshopLanding,
+    ],
 
     tech: [
       "HTML",
