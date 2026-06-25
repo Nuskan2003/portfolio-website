@@ -38,6 +38,9 @@ const projects = [
       sportsTableReservation,
     ],
 
+    github:
+  "https://github.com/afkerthowfeek7860-code/Indoor-Sports-Booking-System",
+
     tech: [
       "React",
       "Node.js",
@@ -103,6 +106,9 @@ const projects = [
       portfolioResume,
       portfolioSkills,
     ],
+
+    github:
+  "https://github.com/Nuskan2003/portfolio-website",
 
     tech: [
       "React",
@@ -171,6 +177,9 @@ const projects = [
       travelPlanner,
     ],
 
+    github:
+  "https://github.com/Nuskan2003/TravelEase-Travel-Information-System",
+
     tech: [
       "PHP",
       "JavaScript",
@@ -234,6 +243,9 @@ const projects = [
       libraryProfile,
     ],
 
+    github:
+  "https://github.com/Nuskan2003/TravelEase-Travel-Information-System",
+
     tech: [
       "C#",
       ".NET",
@@ -296,6 +308,9 @@ const projects = [
       bookshopCatalog,
       bookshopLanding,
     ],
+
+    github:
+  "https://github.com/Nuskan2003/Bookshop-Website",
 
     tech: [
       "HTML",

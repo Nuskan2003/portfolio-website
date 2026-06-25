@@ -76,6 +76,45 @@ function CaseStudy() {
           {project.description}
         </p>
 
+        <div className="mt-8 flex flex-wrap gap-4">
+
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex
+              items-center
+              gap-3
+              px-6
+              py-3
+              rounded-xl
+              bg-slate-900
+              dark:bg-white
+              text-white
+              dark:text-slate-900
+              font-semibold
+              shadow-lg
+              hover:scale-105
+              transition
+              duration-300
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-5 h-5"
+            >
+              <path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 008.2 22.94c.6.11.82-.26.82-.58v-2.1c-3.14.69-3.8-1.51-3.8-1.51-.52-1.3-1.26-1.65-1.26-1.65-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.52-2.5-.29-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.42.11-2.95 0 0 .95-.3 3.1 1.16A10.7 10.7 0 0112 6.8c.95.01 1.91.13 2.81.38 2.15-1.46 3.1-1.16 3.1-1.16.61 1.53.23 2.67.11 2.95.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.27-5.15 5.56.41.35.77 1.04.77 2.1v3.11c0 .32.21.7.82.58A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/>
+            </svg>
+
+            View GitHub Repository
+
+          </a>
+
+        </div>
+
         {/* Overview */}
 
         <section className="mt-16">

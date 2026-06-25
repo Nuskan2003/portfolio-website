@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaGithub, FaArrowRight } from "react-icons/fa";
 
 function ProjectCard({ project }) {
   return (
@@ -22,8 +23,12 @@ function ProjectCard({ project }) {
         dark:border-slate-700
         shadow-xl
         hover:shadow-2xl
+        transition-all
+        duration-300
       "
     >
+      {/* Project Image */}
+
       <div className="overflow-hidden">
         <img
           src={project.image}
@@ -39,7 +44,11 @@ function ProjectCard({ project }) {
         />
       </div>
 
-      <div className="p-6 flex flex-col min-h-[380px]">
+      {/* Card Body */}
+
+      <div className="p-6 flex flex-col min-h-[390px]">
+
+        {/* Title */}
 
         <h3
           className="
@@ -52,18 +61,23 @@ function ProjectCard({ project }) {
           {project.title}
         </h3>
 
+        {/* Description */}
+
         <p
           className="
             mt-3
             text-slate-600
             dark:text-slate-300
+            leading-7
             min-h-[72px]
           "
         >
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mt-5 mb-6">
+        {/* Tech Stack */}
+
+        <div className="flex flex-wrap gap-2 mt-5 mb-8">
 
           {project.tech.map((item) => (
             <span
@@ -86,24 +100,57 @@ function ProjectCard({ project }) {
 
         </div>
 
-        <div className="flex gap-3 mt-auto">
+        {/* Buttons */}
+
+        <div className="grid grid-cols-2 gap-3 mt-auto">
 
           <Link
             to={`/case-study/${project.slug}`}
             className="
-              flex-1
-              text-center
+              flex
+              items-center
+              justify-center
+              gap-2
               py-3
               rounded-xl
               bg-blue-600
+              hover:bg-blue-700
               text-white
               font-semibold
-              hover:bg-blue-700
               transition
             "
           >
-            View Case Study
+            Case Study
+            <FaArrowRight />
           </Link>
+
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              flex
+              items-center
+              justify-center
+              gap-2
+              py-3
+              rounded-xl
+              border
+              border-slate-300
+              dark:border-slate-600
+              bg-white
+              dark:bg-slate-800
+              hover:bg-slate-100
+              dark:hover:bg-slate-700
+              text-slate-800
+              dark:text-white
+              font-semibold
+              transition
+            "
+          >
+            <FaGithub />
+            GitHub
+          </a>
 
         </div>
 
