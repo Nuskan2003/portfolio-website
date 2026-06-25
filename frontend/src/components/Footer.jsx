@@ -1,43 +1,258 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaArrowUp,
+} from "react-icons/fa";
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="py-10 border-t mt-24">
+    <footer
+      className="
+        relative
+        mt-24
+        border-t
+        border-slate-200
+        dark:border-slate-800
+        bg-white/60
+        dark:bg-slate-950/60
+        backdrop-blur-xl
+      "
+    >
+      {/* Background Glow */}
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <div className="flex flex-col items-center">
+        <div
+          className="
+            absolute
+            -top-20
+            -left-20
+            w-72
+            h-72
+            rounded-full
+            bg-blue-500/10
+            blur-3xl
+          "
+        />
 
-          <h2 className="text-3xl font-bold">
-            Nuskan Nazar
-          </h2>
+        <div
+          className="
+            absolute
+            bottom-0
+            right-0
+            w-80
+            h-80
+            rounded-full
+            bg-purple-500/10
+            blur-3xl
+          "
+        />
 
-          <p className="mt-3 text-slate-500">
-            Full Stack Developer
-          </p>
+      </div>
 
-          <div className="flex gap-6 mt-6">
+      <div className="relative max-w-7xl mx-auto px-6 py-16">
 
-            <a
-              href="https://github.com/Nuskan2003"
-              target="_blank"
-              rel="noreferrer"
+        <div className="grid lg:grid-cols-3 gap-12">
+
+          {/* Left */}
+
+          <div>
+
+            <h2
+              className="
+                text-4xl
+                font-bold
+                bg-gradient-to-r
+                from-blue-500
+                via-purple-500
+                to-cyan-400
+                text-transparent
+                bg-clip-text
+              "
             >
-              <FaGithub size={24} />
-            </a>
+              Nuskan Nazar
+            </h2>
 
-            <a
-              href="https://www.linkedin.com/in/muhammadunuskan/"
-              target="_blank"
-              rel="noreferrer"
+            <p
+              className="
+                mt-5
+                leading-8
+                text-slate-600
+                dark:text-slate-400
+              "
             >
-              <FaLinkedin size={24} />
-            </a>
+              Passionate Full Stack Developer
+              focused on building modern,
+              responsive and user-friendly
+              web applications with clean
+              UI and scalable backend
+              solutions.
+            </p>
 
           </div>
 
-          <p className="mt-8 text-sm text-slate-500">
-            © 2026 Nuskan Nazar. All rights reserved.
+          {/* Quick Links */}
+
+          <div>
+
+            <h3 className="text-xl font-semibold mb-6">
+              Quick Links
+            </h3>
+
+            <ul className="space-y-4">
+
+              <li>
+                <a
+                  href="#home"
+                  className="hover:text-blue-500 transition"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#about"
+                  className="hover:text-blue-500 transition"
+                >
+                  About
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#skills"
+                  className="hover:text-blue-500 transition"
+                >
+                  Skills
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#projects"
+                  className="hover:text-blue-500 transition"
+                >
+                  Projects
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-blue-500 transition"
+                >
+                  Contact
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+
+          {/* Connect */}
+
+          <div>
+
+            <h3 className="text-xl font-semibold mb-6">
+              Connect
+            </h3>
+
+            <div className="flex gap-4 flex-wrap">
+
+              <a
+                href="https://github.com/Nuskan2003"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  w-14
+                  h-14
+                  rounded-xl
+                  bg-slate-900
+                  text-white
+                  flex
+                  items-center
+                  justify-center
+                  hover:scale-110
+                  transition
+                "
+              >
+                <FaGithub size={22} />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/muhammadunuskan/"
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  w-14
+                  h-14
+                  rounded-xl
+                  bg-blue-600
+                  text-white
+                  flex
+                  items-center
+                  justify-center
+                  hover:scale-110
+                  transition
+                "
+              >
+                <FaLinkedin size={22} />
+              </a>
+
+            </div>
+
+            <button
+              onClick={scrollToTop}
+              className="
+                mt-10
+                flex
+                items-center
+                gap-3
+                text-blue-500
+                font-semibold
+                hover:translate-y-[-2px]
+                transition
+              "
+            >
+              <FaArrowUp />
+
+              Back to Top
+            </button>
+
+          </div>
+
+        </div>
+
+        <div
+          className="
+            mt-16
+            pt-8
+            border-t
+            border-slate-200
+            dark:border-slate-800
+            flex
+            flex-col
+            md:flex-row
+            justify-between
+            items-center
+            gap-4
+          "
+        >
+
+          <p className="text-slate-500 text-sm">
+            © 2026 Nuskan Nazar. All Rights Reserved.
+          </p>
+
+          <p className="text-slate-500 text-sm">
+            Built with React • Tailwind CSS • Framer Motion
           </p>
 
         </div>
