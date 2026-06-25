@@ -1,17 +1,10 @@
 import {
   FaGithub,
   FaLinkedin,
-  FaArrowUp,
 } from "react-icons/fa";
 
 function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
+  
   return (
     <footer
       className="
@@ -208,24 +201,6 @@ function Footer() {
               </a>
 
             </div>
-
-            <button
-              onClick={scrollToTop}
-              className="
-                mt-10
-                flex
-                items-center
-                gap-3
-                text-blue-500
-                font-semibold
-                hover:translate-y-[-2px]
-                transition
-              "
-            >
-              <FaArrowUp />
-
-              Back to Top
-            </button>
 
           </div>
 
